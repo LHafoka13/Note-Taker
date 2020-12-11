@@ -1,15 +1,15 @@
-const path = ('path');
+// const path = ('path');
 
 // console.log(__dirname)
 
 module.exports = (app) => {
 
     app.get('/notes', (req, res) => {
-        res.sendFile(path.join(__dirname, '../notes.html'));
+        res.sendFile('notes.html', {root: __dirname});
     });
 
-    // app.get('*', (req, res) => {
-    //     res.sendFile(path.join('users/' 'index.html'));
-    // })ls
+    app.get('*', (req, res) => {
+        res.sendFile('index.html', {root: __dirname});
+    });
 
 };
