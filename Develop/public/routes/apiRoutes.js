@@ -1,4 +1,4 @@
-const noteData = require('/users/lilyh/onedrive/desktop/my-coding-files/homework/12-NoteTaker/Note-Taker/develop/db/db.json');
+const noteData = require('../../db/db.json')
 
 module.exports = (app) => {
     app.get('/api/notes', (req, res) => res.json(noteData));
