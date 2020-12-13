@@ -3,6 +3,7 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
+let noteId;
 
 // Dynamically creates notes.html elements
 if (window.location.pathname === "/notes") {
@@ -70,11 +71,18 @@ const renderActiveNote = () => {
   }
 };
 
+let newNote;
+
 const handleNoteSave = () => {
-  const newNote = {
+  let newNote;
+
+  if (noteId) {
+    newNote = {
+    id: noteId.length++,
     title: noteTitle.value,
     text: noteText.value,
-  };
+  }};
+  
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -121,6 +129,7 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
+  noteId = await notes.json();
   if (window.location.pathname === "/notes") {
     noteList.forEach((el) => (el.innerHTML = ""));
   }
