@@ -1,6 +1,16 @@
-// const path = ('path');
+// const path = require("path");
 
-// console.log(__dirname)
+
+// module.exports = (app) => {
+//   //GET REQUESTS
+//   app.get("/notes", (req, res) => {
+//     res.sendFile(path.join(__dirname, "notes.html"));
+//   });
+//   //DEFAULTS TO HOME PAGE
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "index.html"));
+//   });
+// };
 
 module.exports = (app) => {
 
